@@ -90,3 +90,49 @@ Running
 ### Provisioning
 
     http://aws-nms-1:8980/opennms
+
+
+### SNMP Proxy
+
+#### Request
+
+```xml
+<snmp-request location="DEMO" description="NRTG">
+   <agent>
+      <authPassPhrase>0p3nNMSv3</authPassPhrase>
+      <authProtocol>MD5</authProtocol>
+      <maxRepetitions>2</maxRepetitions>
+      <maxRequestSize>65535</maxRequestSize>
+      <maxVarsPerPdu>10</maxVarsPerPdu>
+      <port>161</port>
+      <privPassPhrase>0p3nNMSv3</privPassPhrase>
+      <privProtocol>DES</privProtocol>
+      <readCommunity>public</readCommunity>
+      <retries>1</retries>
+      <securityLevel>1</securityLevel>
+      <securityName>opennmsUser</securityName>
+      <timeout>1800</timeout>
+      <version>2</version>
+      <versionAsString>v2c</versionAsString>
+      <writeCommunity>private</writeCommunity>
+      <address>192.168.1.100</address>
+   </agent>
+   <walk correlation-id="0" max-repetitions="1" instance=".0">
+      <oid>.1.3.6.1.2.1.25.1.1</oid>
+   </walk>
+</snmp-request>
+```
+
+#### Response
+
+```xml
+<snmp-response>
+  <response correlation-id="0">
+    <result>
+      <base>.1.3.6.1.2.1.25.1.1</base>
+      <instance>.0</instance>
+      <value type="67">DXAO</value>
+    </result>
+  </response>
+</snmp-response>
+```
