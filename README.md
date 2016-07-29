@@ -84,6 +84,7 @@ Running
 
     snmp:walk -l DEMO 192.168.1.100 .1.3.6.1.4
     snmp:walk -l DEMO 192.168.1.101 .1.3.6.1.4
+    snmp:walk -l DEMO 127.0.0.1 .1.3.6.1.2.1.4.34.1.11.1.4
     provision:detect -l DEMO ICMP 192.168.1.100
     provision:detect -l DEMO WS-Man 192.168.1.100
 
